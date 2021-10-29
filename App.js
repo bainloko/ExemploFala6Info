@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+/*
+* @bainloko
+* DDM I
+* 22/10/2021
+*/
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+import * as React from 'react';
+import { View, StatusBar, Button, StyleSheet } from 'react-native';
+import * as Speech from 'expo-speech';
+
+export default function App(){
+  const falar = () => {
+    var thingToSay = 'Olá, pessoas da informática!';
+    Speech.speak(thingToSay, { language: "pt-BR" });
+  };
+
+  return(
+    <View style={estilos.container}>
+      <StatusBar />
+      <Button style={estilos.botao} title="Clique aqui para escutar o TTS do aplicativo!" onPress={falar} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const estilos = StyleSheet.create({
   container: {
+    backgroundColor: '#ecf0f1',
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    alignContent: 'center',
     justifyContent: 'center',
+    padding: 8,
+  },
+
+  botao: {
+    width: 200,
   },
 });
