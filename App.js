@@ -1,7 +1,7 @@
 /*
 * @bainloko
 * DDM I
-* 22/10/2021
+* 22/10/2021 e 31/10/2021
 */
 
 import * as React from 'react';
