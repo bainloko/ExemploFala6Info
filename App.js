@@ -5,7 +5,7 @@
 */
 
 import * as React from 'react';
-import { View, StatusBar, Button, StyleSheet } from 'react-native';
+import { View, StatusBar, Pressable, StyleSheet } from 'react-native';
 import * as Speech from 'expo-speech';
 
 export default function App(){
@@ -17,7 +17,9 @@ export default function App(){
   return(
     <View style={estilos.container}>
       <StatusBar />
-      <Button style={estilos.botao} title="Clique aqui para escutar o TTS do aplicativo!" onPress={falar} />
+      <Pressable style={estilos.botao} onPress={falar}>
+        <Text>Clique aqui para escutar o TTS do aplicativo!</Text>
+      </Pressable>
     </View>
   );
 }
@@ -31,7 +33,20 @@ const estilos = StyleSheet.create({
     padding: 8,
   },
 
-  botao: {
-    width: 200,
+  botaoExemplo: {
+    backgroundColor: 'black',
+    marginTop: 5,
+    paddingVertical: 12,
+    width: 110,
+    textAlign: 'center',
+    borderRadius: 4,
+    elevation: 3,
+  },
+
+  fonteExemplo: {
+    color: 'white',
+    fontSize: 16,
+    lineHeight: 21,
+    letterSpacing: 0.25,
   },
 });
