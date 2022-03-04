@@ -8,13 +8,13 @@ import * as React from 'react';
 import { View, StatusBar, Pressable, Text, StyleSheet } from 'react-native';
 import * as Speech from 'expo-speech';
 
-export default function App(){
+export default function App() {
   const falar = () => {
     var thingToSay = 'Olá, pessoas da informática!';
     Speech.speak(thingToSay, { language: "pt-BR" });
   };
 
-  return(
+  return (
     <View style={estilos.container}>
       <StatusBar />
       <Pressable style={estilos.botaoExemplo} onPress={falar}>
@@ -26,7 +26,6 @@ export default function App(){
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: '#ecf0f1',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -38,13 +37,13 @@ const estilos = StyleSheet.create({
     marginTop: 5,
     paddingVertical: 12,
     width: 300,
-    textAlign: 'center',
     borderRadius: 4,
     elevation: 3,
   },
 
   fonteExemplo: {
     color: 'white',
+    textAlign: 'center',
     fontSize: 16,
     lineHeight: 21,
     letterSpacing: 0.25,
